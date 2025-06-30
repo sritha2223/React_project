@@ -1,35 +1,86 @@
+:root {
+  --light-bg: #ffffff;
+  --light-text: #222;
+  --dark-bg: #121212;
+  --dark-text: #f1f1f1;
+  --primary-color: #985830;
+  --secondary-color: hsl(203, 35%, 29%);
+  --accent-color: #53437f;
+}
+
 .container {
   text-align: center;
   padding: 50px;
   min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Light and dark themes */
+/* Light and Dark themes */
 .container.light {
-  background-color: white;
-  color: black;
+  background-color: var(--light-bg);
+  color: var(--light-text);
 }
 
 .container.dark {
-  background-color: black;
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+/* Fixed theme switcher button */
+.theme-toggle-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--secondary-color);
   color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 }
 
 /* Common button style */
 .reset,
 .btn {
   margin: 10px;
-  padding: 20px 40px;
-  font-size: 24px;
-  background-color: antiquewhite;
-  color: red;
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: var(--primary-color);
+  color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.2s ease;
+}.reset:hover,
+.btn:hover {
+  background-color: #311435;
 }
 
-/* Reset button special style */
+/* Reset button style */
 .reset {
-  background-color: blueviolet;
+  background-color: var(--accent-color);
   color: white;
+}
+
+/* Show/Hide button styles */
+.show-btn {
+  background-color: #446b54;
+}
+
+.hide-btn {
+  background-color: #c0392b;
+}
+
+/* Hidden text style */
+.hidden-text {
+  font-size: 20px;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f4f4f4;
+  color: #2d3436;
+  border-radius: 8px;
+  display: inline-block;
 }
